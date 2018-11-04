@@ -8,6 +8,7 @@ namespace TodoApi
 {
     public class Startup
     {
+        // Declare dependencies
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TodoContext>(opt =>
@@ -18,6 +19,8 @@ namespace TodoApi
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
